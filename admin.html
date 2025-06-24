@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Administración de Productos</title>
+        <!-- Pico.css -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+        <!-- estilos compartidos -->
+        <link rel="stylesheet" href="CSS/style.css" />
+
+      </head>
+      <body>
+        <header class="container">
+          <nav aria-label="Navegación principal">
+            <ul>
+              <li><strong>Street Flex SFX</strong></li>
+              <li><a href="index.html">Catálogo</a></li>
+              <li><a href="admin.html">Administración</a></li>
+            </ul>
+          </nav>
+        </header>  <main class="container">
+          <h1>CRUD de Productos</h1><!-- Formulario -->
+      <form id="producto-form">
+        <div class="flex">
+          <label for="type">Tipo:
+            <input type="text" id="type" required />
+          </label>
+          <label for="color">Color:
+            <input type="text" id="color" required />
+          </label>
+          <label for="size">Talla:
+            <input type="text" id="size" required />
+          </label>
+          <label for="imagen-file">Imagen:
+            <input type="file" id="imagen-file" accept="image/*" />
+          </label>
+        </div>
+        <input type="hidden" id="imagen-url" />
+        <input type="hidden" id="producto-id" />
+        <button type="submit" id="btn-submit">Agregar</button>
+        <button type="button" id="btn-cancel" hidden>Cancelar</button>
+      </form>
+       
+      <hr/>
+       
+      <!-- Tabla de productos -->
+      <table>
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Tipo</th>
+            <th>Color</th>
+            <th>Talla</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="productos-tbody">
+          <!-- contenido dinámico -->
+        </tbody>
+      </table>
+       
+        </main>  <footer class="container">
+          <p>© 2025 Street Flex</p>
+        </footer>  <script src="JS/admin.js"></script></body>
+      </html>

@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>SFX - Street Flex</title>
-  <link rel="stylesheet" href="CSS/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Street Flex SFX</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 </head>
 <body>
-  <header>
-    <h2>STREET FLEX</h2>
-    <h1>SFX</h1>
-  </header>
- 
-  <section class="busqueda">
-    <input type="text" placeholder="Buscar...">
-  </section>
- 
-  <section class="inventario">
-    <h3>INVENTORY</h3>
-    <div class="productos">
-      <div class="producto">
-        <img src="IMG/tshirt.PNG" alt="T-Shirt">
-        <p>T-SHIRTS</p>
-        <div class="acciones">
-          <button><img src="IMG/editar.PNG" alt="EDITAR"></button>
-          <button><img src="IMG/Eliminar.PNG" alt="ELIMINAR"></button>
-        </div>
+  <div class="text-center mt-3">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LWxlZnQtcmlnaHQtaWNvbiBsdWNpZGUtYXJyb3ctbGVmdC1yaWdodCI+PHBhdGggZD0iTTggMyA0IDdsNCA0Ii8+PHBhdGggZD0iTTQgN2gxNiIvPjxwYXRoIGQ9Im0xNiAyMSA0LTQtNC00Ii8+PHBhdGggZD0iTTIwIDE3SDQiLz48L3N2Zz4="
+         id="toggleViewBtn"
+         class="icon-btn"
+         width="40"
+         title="Cambiar vista"
+         alt="Cambiar vista" />
+  </div>
+
+  <!-- Vista del Administrador -->
+  <div id="adminView" class="container-fluid">
+    <h1 class="text-center mt-4">STREET FLEX <strong>SFX</strong></h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar producto..." id="searchInput" class="form-control" />
+    </div>
+
+    <h2 class="text-center">INVENTORY</h2>
+    <div class="product-sections d-flex justify-content-around">
+      <div class="product-category">
+        <h3>T-SHIRTS</h3>
+        <div id="tshirtContainer" class="product-container"></div>
       </div>
-      <div class="producto">
-        <img src="IMG/Hoodie.PNG" alt="Hoodie">
-        <p>HOODIES</p>
-        <div class="acciones">
-            <button><img src="IMG/editar.PNG" alt="EDITAR"></button>
-            <button><img src="IMG/Eliminar.PNG" alt="ELIMINAR"></button>
-        </div>
+      <div class="product-category">
+        <h3>HOODIES</h3>
+        <div id="hoodieContainer" class="product-container"></div>
       </div>
-      <div class="producto">
-        <img src="IMG/Jeans.PNG" alt="Jeans">
-        <p>JEANS</p>
-        <div class="acciones">
-            <button><img src="IMG/editar.PNG" alt="EDITAR"></button>
-            <button><img src="IMG/Eliminar.PNG" alt="ELIMINAR"></button>
-        </div>
+      <div class="product-category">
+        <h3>JEANS</h3>
+        <div id="jeansContainer" class="product-container"></div>
       </div>
     </div>
-  </section>
- 
-  <section class="nuevo-producto">
-    <h3>AÑADE UN NUEVO PRODUCTO</h3>
-    <div class="formulario">
-      <div class="imagen-subida">
-        <img src="boot-placeholder.png" alt="Subir imagen">
-        <p>subir imagen</p>
-      </div>
-      <div class="campos">
-        <label>Tipo</label>
-        <input type="text" placeholder="Ej. Zapato">
- 
-        <label>Colores</label>
-        <input type="text" placeholder="Ej. Negro, Blanco...">
- 
-        <label>Tallas</label>
-        <input type="text" placeholder="Ej. 8.5, 9, 9.5, 10, 11...">
-      </div>
-    </div>
-  </section>
+
+    <h3 class="mt-4">Añade un nuevo producto</h3>
+    <form id="productForm" class="add-product-form">
+      <input type="file" id="productImage" accept="image/*" class="form-control mb-2" />
+      <input type="text" id="productType" placeholder="Tipo (Ej. T-shirt)" class="form-control" required />
+      <input type="text" id="productColor" placeholder="Colores (Ej. Negro, Blanco...)" class="form-control" required />
+      <input type="text" id="productSize" placeholder="Tallas (Ej. S, M, L...)" class="form-control" required />
+      <button type="submit" class="btn btn-dark mt-2">Agregar Producto</button>
+    </form>
+  </div>
+
+  <!-- Vista del Cliente -->
+  <div id="clientView" class="container-fluid d-none">
+    <h1 class="text-center mt-4">STREET FLEX <strong>SFX</strong></h1>
+    <nav class="nav justify-content-center">
+      <a class="nav-link" href="#">Inicio</a>
+      <a class="nav-link" href="#">Sign up</a>
+      <a class="nav-link" href="#">Login</a>
+      <a class="nav-link" href="admin.html">Administración de inventario</a>
+    </nav>
+
+    <h2 class="text-center">POPULAR</h2>
+    <div id="clientProducts" class="row text-center"></div>
+  </div>
+
+  <script src="JS/script.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </html>
+
