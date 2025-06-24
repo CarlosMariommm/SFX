@@ -3,10 +3,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Administración de Productos</title>
-        <!-- Pico.css -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-        <!-- estilos compartidos -->
-        <link rel="stylesheet" href="CSS/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+        <link rel="stylesheet" href="CSS/admin.css" />
 
       </head>
       <body>
@@ -19,7 +17,7 @@
             </ul>
           </nav>
         </header>  <main class="container">
-          <h1>CRUD de Productos</h1><!-- Formulario -->
+          <h1>Añade una prenda:</h1>
       <form id="producto-form">
         <div class="flex">
           <label for="type">Tipo:
@@ -43,7 +41,6 @@
        
       <hr/>
        
-      <!-- Tabla de productos -->
       <table>
         <thead>
           <tr>
@@ -54,9 +51,7 @@
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody id="productos-tbody">
-          <!-- contenido dinámico -->
-        </tbody>
+        <tbody id="productos-tbody"></tbody>
       </table>
        
         </main>  <footer class="container">

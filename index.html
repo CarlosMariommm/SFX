@@ -1,70 +1,28 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Street Flex SFX</title>
-  <link rel="stylesheet" href="CSS/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-</head>
-<body>
-  <div class="text-center mt-3">
-    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LWxlZnQtcmlnaHQtaWNvbiBsdWNpZGUtYXJyb3ctbGVmdC1yaWdodCI+PHBhdGggZD0iTTggMyA0IDdsNCA0Ii8+PHBhdGggZD0iTTQgN2gxNiIvPjxwYXRoIGQ9Im0xNiAyMSA0LTQtNC00Ii8+PHBhdGggZD0iTTIwIDE3SDQiLz48L3N2Zz4="
-         id="toggleViewBtn"
-         class="icon-btn"
-         width="40"
-         title="Cambiar vista"
-         alt="Cambiar vista" />
-  </div>
-
-  <!-- Vista del Administrador -->
-  <div id="adminView" class="container-fluid">
-    <h1 class="text-center mt-4">STREET FLEX <strong>SFX</strong></h1>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar producto..." id="searchInput" class="form-control" />
-    </div>
-
-    <h2 class="text-center">INVENTORY</h2>
-    <div class="product-sections d-flex justify-content-around">
-      <div class="product-category">
-        <h3>T-SHIRTS</h3>
-        <div id="tshirtContainer" class="product-container"></div>
-      </div>
-      <div class="product-category">
-        <h3>HOODIES</h3>
-        <div id="hoodieContainer" class="product-container"></div>
-      </div>
-      <div class="product-category">
-        <h3>JEANS</h3>
-        <div id="jeansContainer" class="product-container"></div>
-      </div>
-    </div>
-
-    <h3 class="mt-4">Añade un nuevo producto</h3>
-    <form id="productForm" class="add-product-form">
-      <input type="file" id="productImage" accept="image/*" class="form-control mb-2" />
-      <input type="text" id="productType" placeholder="Tipo (Ej. T-shirt)" class="form-control" required />
-      <input type="text" id="productColor" placeholder="Colores (Ej. Negro, Blanco...)" class="form-control" required />
-      <input type="text" id="productSize" placeholder="Tallas (Ej. S, M, L...)" class="form-control" required />
-      <button type="submit" class="btn btn-dark mt-2">Agregar Producto</button>
-    </form>
-  </div>
-
-  <!-- Vista del Cliente -->
-  <div id="clientView" class="container-fluid d-none">
-    <h1 class="text-center mt-4">STREET FLEX <strong>SFX</strong></h1>
-    <nav class="nav justify-content-center">
-      <a class="nav-link" href="#">Inicio</a>
-      <a class="nav-link" href="#">Sign up</a>
-      <a class="nav-link" href="#">Login</a>
-      <a class="nav-link" href="admin.html">Administración de inventario</a>
-    </nav>
-
-    <h2 class="text-center">POPULAR</h2>
-    <div id="clientProducts" class="row text-center"></div>
-  </div>
-
-  <script src="JS/script.js"></script>
-</body>
-</html>
-
+<!DOCTYPE html><html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><strong>Street Flex SFX</strong></li>
+          <li><a href="index.html">Catálogo</a></li>
+          <li><a href="admin.html">Administrar inventario</a></li>
+        </ul>
+      </nav>
+    </header> 
+         <main class="container-fluid">
+            <h1 class="text-center mt-4">STREET FLEX <strong>SFX</strong></h1>
+            <div class="search-bar mb-3">
+              <input type="text" placeholder="Buscar producto..." id="searchInput" class="form-control" />
+            </div>
+            <h2 class="text-center">PRODUCTOS</h2>
+            <div id="clientProducts" class="row text-center"></div>
+          </main>  <footer class="container"><p>© 2025 Street Flex</p></footer>
+          <script src="JS/script.js" defer></script></body>
+  </html>
